@@ -1,0 +1,7 @@
+kubectl apply -f database/database_pv.yaml
+kubectl apply -f database/database_pvc.yaml
+kubectl apply -f database/database_deployment.yaml
+kubectl apply -f database/database_service.yaml
+kubectl apply -f microservice_a/microservice_a_deployment.yaml
+kubectl apply -f microservice_a/microservice_a_service.yaml
+kubectl apply -f microservice_b/microservice_b_deployment.yaml
