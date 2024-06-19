@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona HTML</title>
+</head>
+<body>
+    <h1>Strona HTML z przyciskiem</h1>
+    <button id="getDataButton">Pobierz dane</button>
+    <div id="dataContainer"></div>
+
+    <script>
+        document.getElementById('getDataButton').addEventListener('click', function() {
+            fetch('/backend')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('dataContainer').innerHTML = JSON.stringify(data);
+                })
+                .catch(error => console.error('Błąd:', error));
+        });
+    </script>
+</body>
+</html>
